@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-row>
+  <el-col :span="24"><HeadMenu /></el-col>
+</el-row>
+<router-view></router-view>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import HeadMenu from '@/components/HeadMenu.vue';
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    HeadMenu
   }
 }
 </script>
+<style>
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    min-height: 0px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+ </style>
